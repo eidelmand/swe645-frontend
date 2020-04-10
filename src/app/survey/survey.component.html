@@ -1,0 +1,90 @@
+<div class = "container-fluid mb-5">
+    <h1>Survey</h1>
+
+    <form #survey="ngForm" (ngSubmit)="onSubmit()" autocomplete="true" novalidate>
+
+        <div class="form-group">
+            <label>Student ID  *</label>
+            <input type="text"  #id="ngModel" pattern="^[a-zA-Z0-9]+$" [class.is-invalid]="id.invalid && id.touched" class="form-control is-invalid" id="id" name="id" required autofocus [(ngModel)]="studentModel.id">
+            <small class="text-danger" [class.d-none]="id.valid || id.untouched">Name is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Username  *</label>
+            <input class="form-control" #username="ngModel" pattern="^[a-zA-Z0-9]+$" [class.is-invalid]="username.invalid && username.touched" type="text" id="username" name="username" required [(ngModel)]="studentModel.username">
+            <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Street address *</label>
+            <input class="form-control" #street="ngModel" [class.is-invalid]="street.invalid && street.touched" type="text" name="street" id="street" required [(ngModel)]="studentModel.street">
+            <small class="text-danger" [class.d-none]="street.valid || street.untouched">street is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>City  *</label>
+            <input class="form-control" #city="ngModel" [class.is-invalid]="city.invalid && city.touched" type="text" name="city" id="city" required [(ngModel)]="studentModel.city">
+            <small class="text-danger" [class.d-none]="city.valid || city.untouched">City is required</small>
+        </div>
+        <div class="form-group">
+            <label>State  *</label>
+            <input class="form-control" #state="ngModel" [class.is-invalid]="state.invalid && state.touched" type="text" name="state" id="state" required [(ngModel)]="studentModel.state">
+            <small class="text-danger" [class.d-none]="state.valid || state.untouched">State is required</small>
+        </div>
+        <div class="form-group">
+            <label>Zip Code  *</label>
+            <input class="form-control" #zip="ngModel" [class.is-invalid]="zip.invalid && state.touched" type="text" name="zip" id="zip_code" required [(ngModel)]="studentModel.zip">
+            <small class="text-danger" [class.d-none]="zip.valid || zip.untouched">Zip is required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number  *</label>
+            <input class="form-control" #phone="ngModel" [class.is-invalid]="phone.invalid && phone.touched" type="text" name="phone" placeholder = "(999) 999-999" id="phone" required [(ngModel)]="studentModel.phone">
+            <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone is required</small>
+        </div>
+        <div class="form-group">
+            <label>Email  *</label>
+            <input class="form-control" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" type="text" name="email" id="email" placeholder = "example@email.com" id="email" required [(ngModel)]="studentModel.email">
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+        </div>
+        <div class="form-group">
+            <label>Url  *</label>
+            <input class="form-control" #url="ngModel" [class.is-invalid]="url.invalid && url.touched" type="text" name="form_url" placeholder = "www.url.com" id="url" required ngModel>
+            <small class="text-danger" [class.d-none]="url.valid || url.untouched">URL is required</small>
+        </div>
+        <div class="form-group">
+            <label>Date  *</label>
+            <input class="form-control" #date="ngModel" [class.is-invalid]="date.invalid && date.touched" type="text" name="date" placeholder = "mm/dd/yyyy" id="date" required ngModel>
+            <small class="text-danger" [class.d-none]="date.valid || date.untouched">Date is required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="recommendation">Would you recommend this school to others?</label><br>
+            <select id="recommendation" name="recommendation" required ngModel>
+                <option selected></option>
+                <option *ngFor="let recommend of recommendation">{{recommend}}</option>
+            </select>
+        </div>
+
+        <div ngModelGroup="things liked" class = "form-group">
+            <strong>Things you liked:</strong> <br />
+            <label> <input name="students" type="checkbox" value="Students" id="Students" ngModel/>Students</label> <br />
+            <label> <input name="location" type="checkbox" value="Location" id="Location" ngModel/>Location</label> <br />
+            <label> <input name="campus" type="checkbox" value="Campus" id="Campus" ngModel/>Campus</label> <br />
+            <label> <input name="atmosphere" type="checkbox" value="Atmosphere" id="Atmosphere" ngModel/>Atmosphere</label> <br />
+            <label> <input name="dorms" type="checkbox" value="Dorms" id="Dorms" ngModel/>Dorm rooms</label> <br />
+            <label> <input name="sports" type="checkbox" value="Sports" id="Sports" ngModel/>Sports</label>
+        </div>
+
+        <div class = "form-group">
+            <strong>How did you find George Mason University?</strong> <br />
+            <label> <input name="reference" type="radio" value="Friends" id="Friends" ngModel/>Friends</label> <br />
+            <label> <input name="reference" type="radio" value="TV" id="TV" ngModel/>TV</label> <br />
+            <label> <input name="reference" type="radio" value="Internet" id="Internet" ngModel/>Internet</label> <br />
+            <label> <input name="reference" type="radio" value="Other" id="Other" ngModel/>Other</label>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+</div>

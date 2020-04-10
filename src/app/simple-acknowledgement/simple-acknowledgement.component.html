@@ -1,0 +1,11 @@
+<h3>Thank you for participating in the survey. Here is a list of
+    all students who have filled out the survey. Please click on an id for
+    more information.</h3>
+
+
+    <p>Students: </p>
+    <ul class="items">
+        <li (click)="onSelect(id)" *ngFor ="let id of ids">
+            {{id}}
+        </li>
+    </ul>
