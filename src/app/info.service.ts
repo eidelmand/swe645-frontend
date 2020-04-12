@@ -13,7 +13,7 @@ import { Student } from './student';
   providedIn: 'root'
 })
 export class InfoService {
-    url = "http://localhost:8080/Backend/StudentResource";
+    url = "http://35.237.187.164:8080/Backend/StudentResource";
 
   constructor(private http: HttpClient) { }
 
