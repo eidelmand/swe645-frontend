@@ -40,8 +40,8 @@ export class SurveyComponent{
         console.log(this.params);
 
 
-       // this.infoService.uploadSurvey(this.params)
-       // .subscribe();
+        this.infoService.uploadSurvey(this.params)
+        .subscribe();
 
 
         this.router.navigate(['/simple-ack']);
