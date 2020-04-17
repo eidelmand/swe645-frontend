@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+name: swe645-frontend
+labels:
+  app: swe645-frontend
+spec:
+template:
+  metadata:
+    labels:
+      app: swe645_frontend
+      tier: swe645_frontend
+  spec:
+    containers:
+    - name: swe645-frontend
+      image: eyaron94/swe645_frontend:latest
+      ports:
+      - containerPort: 80
