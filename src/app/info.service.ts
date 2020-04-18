@@ -13,11 +13,12 @@ import { Student } from './student';
   providedIn: 'root'
 })
 export class InfoService {
-    url = "http://35.237.187.164:8080/Backend/StudentResource";
+  url = "http://35.237.187.164:8080/Backend/StudentResource";
 
   constructor(private http: HttpClient) { }
 
   uploadSurvey(data: String){
+	console.log(this.url);
        return this.http.get(this.url + data);
   }
 
