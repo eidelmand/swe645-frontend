@@ -11,6 +11,7 @@ import { SimpleAcknowledgementComponent } from './simple-acknowledgement/simple-
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { NoSuchStudentComponent } from './no-such-student/no-such-student.component';
 
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NoSuchStudentComponent } from './no-such-student/no-such-student.compon
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 
