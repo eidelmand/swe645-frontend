@@ -1,11 +1,6 @@
 pipeline {
    agent any
 	
-	
-        tools {
-          // Install the Maven version configured as "M3" and add it to the path.
-          maven "Maven 3.6.3"
-          }
     environment {
         PROJECT_ID = 'extreme-citadel-271521'//'654482500446'
         CLUSTER_NAME = 'swe645'
