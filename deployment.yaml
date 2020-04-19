@@ -13,6 +13,6 @@ template:
   spec:
     containers:
     - name: swe645-frontend
-      image: eyaron94/swe645_frontend:latest
+      image: registry.hub.docker.com/eyaron94/swe645_frontend
       ports:
       - containerPort: 80
