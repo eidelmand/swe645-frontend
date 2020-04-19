@@ -18,6 +18,7 @@ export class InfoService {
   constructor(private http: HttpClient) { }
 
   uploadSurvey(data: String){
+      console.log(this.url);
        return this.http.get(this.url + data);
   }
 
