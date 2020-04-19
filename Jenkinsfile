@@ -41,7 +41,7 @@ pipeline {
             steps{
 		          sh 'gcloud config set project extreme-citadel-271521'	
 		          sh 'gcloud container clusters get-credentials swe645 --zone us-east1-c'	
-		          sh 'kubectl set image deployments/swe645-frontend swe645-frontend=eyaron94/swe645_frontend:latest'
+		          sh 'kubectl set image deployments/swe645-frontend swe645-frontend=registry.hub.docker.com/eyaron94/swe645_frontend'
              }
         }
     }
