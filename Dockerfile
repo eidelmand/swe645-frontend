@@ -3,7 +3,7 @@
 FROM node:alpine AS my-app-build
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm install && npm run build
 
 # stage 2
 
