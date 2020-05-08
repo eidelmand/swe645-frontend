@@ -11,7 +11,6 @@ import { SimpleAcknowledgementComponent } from './simple-acknowledgement/simple-
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { NoSuchStudentComponent } from './no-such-student/no-such-student.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

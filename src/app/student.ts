@@ -14,6 +14,15 @@ export class Student {
         public zip: string,
         public phone: string,
         public email: string,
-        public date: string
+        public date: string,
+        public url: string,
+        public recommendation: string,
+        public isStudents: boolean,
+        public isLocation: boolean,
+        public isCampus: boolean,
+        public isAtmosphere: boolean,
+        public isDorms: boolean,
+        public isSports: boolean,
+        public reference: string
     ){}
 }

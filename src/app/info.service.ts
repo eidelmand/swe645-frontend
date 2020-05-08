@@ -19,14 +19,14 @@ export class InfoService {
 
   uploadSurvey(data: String){
       console.log(this.url);
-       return this.http.get(this.url + data);
+       return this.http.get("https://klyycevi0f.execute-api.us-east-1.amazonaws.com/uploadSurvey" + data);
   }
 
   getIds(): Observable<String[]>{
-      return this.http.get<String[]>(this.url);
+      return this.http.get<String[]>("https://71i8qhqi8k.execute-api.us-east-1.amazonaws.com/StudentResourceGetIds");
   }
 
   getStudent(id: String): Observable<Student>{
-      return this.http.get<Student>(this.url + "?studentid=" + id);
+      return this.http.get<Student>("https://tmfzi3sgpa.execute-api.us-east-1.amazonaws.com/getStudent?id="+ id);
   }
 }

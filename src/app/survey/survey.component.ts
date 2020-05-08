@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SurveyComponent{
     recommendation = ['Very Likely', 'Likely', 'Unlikely'];
-    studentModel = new Student('','','','','','','','','');
+    studentModel = new Student('','','','','','','','','','','','',false,false,false,false,false,false,'');
     data = "";
     params: String = "";
 
@@ -27,15 +27,26 @@ export class SurveyComponent{
     }
 
     onSubmit(){
+        console.log(this.studentModel);
 //"?studentid=hello4&username=a&address=a&city=a&state=a&zip=a&phone=a&email=a&form_url=a&date=a&things+liked=Location&things+liked=Campus&reference=Friends&recommend=Highly+Likely&grad+year=a&comments=d"
         this.params += "?studentid=" + this.studentModel.id + "&";
         this.params += "username=" + this.studentModel.username + "&";
-        this.params += "city=" + this.studentModel.street + "&";
+        this.params += "street=" + this.studentModel.street + "&";
+        this.params += "city=" + this.studentModel.city + "&";
         this.params += "state=" + this.studentModel.state + "&";
         this.params += "zip=" + this.studentModel.zip + "&";
         this.params += "phone=" + this.studentModel.phone + "&";
         this.params += "email=" + this.studentModel.email + "&";
-        this.params += "date=" + this.studentModel.date;
+        this.params += "date=" + this.studentModel.date + "&";
+        this.params += "url=" + this.studentModel.url + "&";
+        this.params += "recommendation=" + this.studentModel.recommendation + "&";
+        this.params += "isStudents=" + this.studentModel.isStudents + "&";
+        this.params += "isLocation=" + this.studentModel.isLocation + "&";
+        this.params += "isCampus=" + this.studentModel.isCampus + "&";
+        this.params += "isAtmosphere=" + this.studentModel.isAtmosphere + "&";
+        this.params += "isDorms=" + this.studentModel.isDorms + "&";
+        this.params += "isSports=" + this.studentModel.isSports + "&";
+        this.params += "reference=" + this.studentModel.reference;
 
         console.log(this.params);
 
@@ -43,9 +54,8 @@ export class SurveyComponent{
         this.infoService.uploadSurvey(this.params)
         .subscribe();
 
-
         this.router.navigate(['/simple-ack']);
-
     }
+
 
 }

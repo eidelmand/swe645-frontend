@@ -49,18 +49,18 @@
         </div>
         <div class="form-group">
             <label>Url  *</label>
-            <input class="form-control" #url="ngModel" [class.is-invalid]="url.invalid && url.touched" type="text" name="form_url" placeholder = "www.url.com" id="url" required ngModel>
+            <input class="form-control" #url="ngModel" [class.is-invalid]="url.invalid && url.touched" type="text" name="form_url" placeholder = "www.url.com" id="url" required [(ngModel)]="studentModel.url">
             <small class="text-danger" [class.d-none]="url.valid || url.untouched">URL is required</small>
         </div>
         <div class="form-group">
             <label>Date  *</label>
-            <input class="form-control" #date="ngModel" [class.is-invalid]="date.invalid && date.touched" type="text" name="date" placeholder = "mm/dd/yyyy" id="date" required ngModel>
+            <input class="form-control" #date="ngModel" [class.is-invalid]="date.invalid && date.touched" type="date" name="date" placeholder = "mm/dd/yyyy" id="date" required [(ngModel)]="studentModel.date">
             <small class="text-danger" [class.d-none]="date.valid || date.untouched">Date is required</small>
         </div>
 
         <div class="form-group">
             <label for="recommendation">Would you recommend this school to others?</label><br>
-            <select id="recommendation" name="recommendation" required ngModel>
+            <select id="recommendation" name="recommendation" required [(ngModel)]="studentModel.recommendation">
                 <option selected></option>
                 <option *ngFor="let recommend of recommendation">{{recommend}}</option>
             </select>
@@ -68,23 +68,25 @@
 
         <div ngModelGroup="things liked" class = "form-group">
             <strong>Things you liked:</strong> <br />
-            <label> <input name="students" type="checkbox" value="Students" id="Students" ngModel/>Students</label> <br />
-            <label> <input name="location" type="checkbox" value="Location" id="Location" ngModel/>Location</label> <br />
-            <label> <input name="campus" type="checkbox" value="Campus" id="Campus" ngModel/>Campus</label> <br />
-            <label> <input name="atmosphere" type="checkbox" value="Atmosphere" id="Atmosphere" ngModel/>Atmosphere</label> <br />
-            <label> <input name="dorms" type="checkbox" value="Dorms" id="Dorms" ngModel/>Dorm rooms</label> <br />
-            <label> <input name="sports" type="checkbox" value="Sports" id="Sports" ngModel/>Sports</label>
+            <label> <input name="students" type="checkbox" value="Students" id="Students" [(ngModel)]="studentModel.isStudents"/>Students</label> <br />
+            <label> <input name="location" type="checkbox" value="Location" id="Location" [(ngModel)]="studentModel.isLocation"/>Location</label> <br />
+            <label> <input name="campus" type="checkbox" value="Campus" id="Campus" [(ngModel)]="studentModel.isCampus"/>Campus</label> <br />
+            <label> <input name="atmosphere" type="checkbox" value="Atmosphere" id="Atmosphere" [(ngModel)]="studentModel.isAtmosphere"/>Atmosphere</label> <br />
+            <label> <input name="dorms" type="checkbox" value="Dorms" id="Dorms" [(ngModel)]="studentModel.isDorms"/>Dorm rooms</label> <br />
+            <label> <input name="sports" type="checkbox" value="Sports" id="Sports" [(ngModel)]="studentModel.isSports"/>Sports</label>
         </div>
 
         <div class = "form-group">
             <strong>How did you find George Mason University?</strong> <br />
-            <label> <input name="reference" type="radio" value="Friends" id="Friends" ngModel/>Friends</label> <br />
-            <label> <input name="reference" type="radio" value="TV" id="TV" ngModel/>TV</label> <br />
-            <label> <input name="reference" type="radio" value="Internet" id="Internet" ngModel/>Internet</label> <br />
-            <label> <input name="reference" type="radio" value="Other" id="Other" ngModel/>Other</label>
+            <label> <input name="reference" type="radio" value="Friends" id="Friends" [(ngModel)]="studentModel.reference"/>Friends</label> <br />
+            <label> <input name="reference" type="radio" value="TV" id="TV" [(ngModel)]="studentModel.reference"/>TV</label> <br />
+            <label> <input name="reference" type="radio" value="Internet" id="Internet" [(ngModel)]="studentModel.reference"/>Internet</label> <br />
+            <label> <input name="reference" type="radio" value="Other" id="Other" [(ngModel)]="studentModel.reference"/>Other</label>
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>
-	<button class="btn btn-success">Cancel</button>
     </form>
+        <br>
+    <button class="btn btn-success" (click)="survey.reset()">Cancel</button>
+
 </div>
