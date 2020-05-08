@@ -17,7 +17,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SurveyComponent{
     recommendation = ['Very Likely', 'Likely', 'Unlikely'];
-    studentModel = new Student('','','','','','','','','','','','',false,false,false,false,false,false,'');
+    studentModel = new Student(
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        ''
+    );
+//    studentModel = new Student("","","","","","","","","","","","",false,false,false,false,false,false);
     data = "";
     params: String = "";
 

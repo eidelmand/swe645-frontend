@@ -16,7 +16,26 @@ import { InfoService } from '../info.service';
   styleUrls: ['./student-info.component.css']
 })
 export class StudentInfoComponent implements OnInit {
-    student = new Student('','','','','','','','','');
+    student = new Student(
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        ''
+    );
 
   constructor(private route: ActivatedRoute, private infoService: InfoService) { }
 
